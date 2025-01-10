@@ -78,3 +78,88 @@ Identyfikator: LM9 Wydajność
 Opis: Czas oczekiwania na odpowiedź serwera przy analizie danych nie może przekroczyć 1 sekundy
 
 Kategoria: Pozafunkcjonalne
+
+#Architektura systemu/oprogramowania
+
+Architektura rozwoju
+
+Stos technologiczny oraz narzędzia wykorzystywane podczas rozwoju aplikacji:
+
+Nazwa technologii: Python
+
+Przeznaczenie: Backend - obsługa serwera aplikacji (pobieranie danych dla trenera
+personalnego), przetwarzanie zdarzeń webhooka. Frontend - analiza pobranych danych
+
+Numer wersji: Python 3.10.12
+
+Nazwa technologii: Flask
+
+Przeznaczenie: Tworzenie API i obsługa żądań HTTP
+
+Numer wersji: Flask 2.2.5
+
+Nazwa technologii: MongoDB
+
+Przeznaczenie: Przechowywanie danych użytkowników, aktywności i komentarzy
+
+Numer wersji: MongoDB 5.0
+
+Przykładowy punkt końcowy: /webhook
+
+Przeznaczenie: Nasłuchiwanie zdarzeń Strava (np. nowych aktywności, usuniętych aktywności).
+
+Narzędzia programistyczne:
+
+PyCharm 2024.2 (Community Edition)
+
+Postman (do testowania API oraz punktów końcowych webhook)
+
+Ngrok (do udostępniania lokalnego serwera webhookowi podczas testów)
+
+Debugger Flask (do monitorowania logów przy obsłudze zdarzeń webhooka)
+
+Przeznaczenie: Nasłuchiwanie zdarzeń Strava (np. nowych aktywności, usuniętych aktywności).
+
+
+Architektura uruchomieniowa
+
+Stos technologiczny oraz narzędzia wymagane podczas działania aplikacji:
+
+Nazwa technologii: Flask
+
+Przeznaczenie: Hostowanie aplikacji webowej
+
+Numer wersji: Flask 2.2.5
+
+Nazwa technologii: webhook
+
+Przeznaczenie: Udostępnianie lokalnego serwera w Internecie
+
+Numer wersji: ngrok 3.1.1
+
+Nazwa technologii: ngrok
+
+Przeznaczenie: Udostępnianie lokalnego serwera w Internecie
+
+Numer wersji: ngrok 3.1.1
+
+Nazwa technologii: MongoDB
+
+Przeznaczenie: Przechowywanie i zarządzanie danymi
+
+Numer wersji: MongoDB 5.0
+
+Narzędzia uruchomieniowe:
+
+Serwer HTTP (serwer wbudowany Flask - )
+
+Środowisko produkcyjne (macOS - Sequoia 15.1)
+ 
+Klient Strava API (do interakcji z zewnętrznym API)
+
+Przykładowy punkt końcowy /webhook
+
+Żądanie POST (do odbierania zdarzeń od Strava).
+
+Przetwarzanie danych: Każde zdarzenie jest zapisywane w bazie MongoDB (wczytanie nowej
+aktywności użytkownika).
