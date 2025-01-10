@@ -17,7 +17,7 @@ Autorzy: Łucja Wróblewska, Marek Michalak
 Licencja: Licencja MIT, Licencja API Strava
 ## Specyfikacja wymagań
 
-Priorytet:1
+### Priorytet:1
 
 Identyfikator: LM1
 
