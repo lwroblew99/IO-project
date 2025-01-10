@@ -156,3 +156,15 @@ Przykładowy punkt końcowy /webhook
 
 Przetwarzanie danych: Każde zdarzenie jest zapisywane w bazie MongoDB (wczytanie nowej
 aktywności użytkownika).
+
+## Testy
+### Test logowania
+Scenariusz: Użytkownik otwiera link wygenerowany przez ngrok, wprowadza dane logowania.
+Oczekiwany wynik: Użytkownik zostaje zalogowany i przekierowany do ekranu akceptacji danych
+API Strava.
+### Test autoryzacji API Strava:
+Scenariusz: Użytkownik akceptuje dostęp do swoich danych treningowych na platformie Strava.
+Oczekiwany wynik: Aplikacja odbiera token dostępu i zapisuje go w bazie MongoDB.
+### Test analizy TSS:
+Scenariusz: Użytkownik dodaje nową aktywność, a aplikacja oblicza TSS i HRmax.
+Oczekiwany wynik: Dane TSS i HRmax są poprawnie obliczone i wyświetlone.
